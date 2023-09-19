@@ -1,0 +1,9 @@
+use localtext from #std;
+
+export val strings = {
+	title: localtext {
+		en: 'Hello world!',
+		de: "Hallo Welt!",
+		fr: "Bonjour le monde !",
+	},
+}
