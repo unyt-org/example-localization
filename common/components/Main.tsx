@@ -1,12 +1,14 @@
-import { UIX } from "uix";
-// import data from "common/data.dx";
+import { Component } from "uix/components/Component.ts";
+import { template } from "uix/html/template.ts";
 import { always, Datex } from "unyt_core/datex.ts";
+import { use } from "uix/base/decorators.ts";
+
 const languages = {
 	"en": "🇺🇸",
 	"de": "🇩🇪",
 	"fr": "🇫🇷"
 }
-@UIX.template(function(this: Main) {
+@template(function(this: Main) {
 	const ENV = Datex.Runtime.ENV;
 	return <div class="main">
 		<h1>{this.strings.title}</h1>
@@ -23,6 +25,6 @@ const languages = {
 		</div>
 	</div>
 })
-export class Main extends UIX.BaseComponent {
+export class Main extends Component {
 	@use("../data.dx") declare strings: {[key: string]: string};
 }

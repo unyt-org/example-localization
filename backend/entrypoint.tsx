@@ -1,9 +1,10 @@
-import { Logger } from "unyt_core/utils/logger.ts";
-import { UIX } from "uix/uix.ts";
 import { Main } from "../common/components/Main.tsx";
+import { Entrypoint } from "uix/html/entrypoints.ts";
+import { renderBackend, renderHybrid, renderStatic } from "uix/base/render-methods.ts";
 
 export default {
 	'/': null,
-	'/static': () => UIX.renderStatic(<Main/>),
-	'/hybrid': <Main/>,
-} satisfies UIX.Entrypoint;
+	'/static': () => renderStatic(<Main/>),
+	'/backend': () => renderBackend(<Main/>),
+	'/hybrid': () => renderHybrid(<Main/>),
+} satisfies Entrypoint;
