@@ -4,6 +4,5 @@ import { Entrypoint } from "uix/html/entrypoints.ts";
 export default {
 	'/': <Main/>,
 	'/static': null,
-	'/hybrid': null,
-	'/backend': null
+	'/hybrid': null
 } satisfies Entrypoint;

@@ -6,6 +6,7 @@
 	text-align: center;
 	flex-direction: column;
 	height: 100vh;
+	cursor: pointer;
 	&>.flags {
 		display: flex;
 		grid-gap: 20px;
