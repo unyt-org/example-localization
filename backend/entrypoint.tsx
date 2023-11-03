@@ -5,6 +5,5 @@ import { renderBackend, renderHybrid, renderStatic } from "uix/base/render-metho
 export default {
 	'/': null,
 	'/static': () => renderStatic(<Main/>),
-	'/backend': () => renderBackend(<Main/>),
 	'/hybrid': () => renderHybrid(<Main/>),
 } satisfies Entrypoint;
