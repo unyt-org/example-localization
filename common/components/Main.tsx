@@ -9,15 +9,14 @@ const languages = {
 	"fr": "🇫🇷"
 }
 @template(function(this: Main) {
-	const ENV = Datex.Runtime.ENV;
 	return <div class="main">
 		<h1>{this.strings.title}</h1>
 		<div class="flags">
 			{
 				Object.entries(languages).map(([lang, flag]) => 
 					<div 
-						data-active={always(() => ENV.LANG === lang)}
-						onclick={() => ENV.LANG = lang} class="toggle">
+						data-active={always(() => use(lang) && Datex.Runtime.ENV.LANG === lang)}
+						onclick:frontend={() => use(lang) && (Datex.Runtime.ENV.LANG = lang)} class="toggle">
 						{flag}
 					</div>
 				)
