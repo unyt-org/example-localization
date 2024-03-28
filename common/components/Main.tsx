@@ -1,4 +1,3 @@
-import { UIX } from "uix";
 import { include } from "uix/base/decorators.ts";
 import { Component } from "uix/components/Component.ts";
 import { template } from "uix/html/template.ts";
@@ -9,7 +8,7 @@ const languages = {
 	"de": "🇩🇪",
 	"fr": "🇫🇷"
 }
-@template(function(this: Main) {
+@template(function(this) {
 	return <div class="main">
 		<h1>{this.strings.title}</h1>
 		<div class="flags">
@@ -17,7 +16,7 @@ const languages = {
 				Object.entries(languages).map(([lang, flag]) => 
 					<div 
 						data-active={always(() => Datex.Runtime.ENV.LANG === lang)}
-						onclick:frontend={() => use(lang) && (Datex.Runtime.ENV.LANG = lang)} class="toggle">
+						onclick:frontend={() => use("standalone", lang) && (Datex.Runtime.ENV.LANG = lang)} class="toggle">
 						{flag}
 					</div>
 				)
@@ -26,5 +25,9 @@ const languages = {
 	</div>
 })
 export class Main extends Component {
-	@include("../data.dx") declare strings: {[key: string]: string};
+	@include("../data.dx") strings!: {[key: string]: string};
+	@standalone
+	override async onDisplay() {
+		await import("datex-core-legacy");
+	}
 }

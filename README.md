@@ -13,7 +13,7 @@ This repository demonstrates some essential concept of the [UIX](https://uix.uny
 	```
 3. Run the project local
 	```bash
-	$ uix -wlb --port 8000
+	$ uix --port 8000
 	```
 6. Navigate to your favourite web browser and open http://localhost:8000 to see everything in action. 
 
@@ -27,7 +27,7 @@ Since everything is rendered on the server there is just a [back-end](https://un
     │   ├── .dx                 // Config file for deployment
     │   └── entrypoint.tsx      // Back-end entrypoint
     ├── common/
-    │   ├── compoments/
+    │   ├── components/
     │   │   └── Main.tsx        // Main component
     │   └── data.dx             // Localization file
     ├── frontend/
@@ -51,4 +51,4 @@ In [DATEX](https://datex.unyt.org), environment variables can be accessed using 
 
 ---
 
-<sub>&copy; unyt 2023 • [unyt.org](https://unyt.org)</sub>
+<sub>&copy; unyt 2024 • [unyt.org](https://unyt.org)</sub>

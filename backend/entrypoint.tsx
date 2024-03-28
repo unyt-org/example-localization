@@ -1,9 +1,9 @@
 import { Main } from "../common/components/Main.tsx";
 import { Entrypoint } from "uix/html/entrypoints.ts";
-import { renderBackend, renderHybrid, renderStatic } from "uix/base/render-methods.ts";
+import { renderBackend } from 'uix/base/render-methods.ts';
 
 export default {
 	'/': null,
-	'/static': () => renderStatic(<Main/>),
-	'/hybrid': () => renderHybrid(<Main/>),
+	'/backend': () => renderBackend(<Main/>), // Uses backend language
+	'/hybrid': () => <Main/>
 } satisfies Entrypoint;
