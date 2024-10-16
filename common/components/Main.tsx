@@ -1,7 +1,7 @@
 import { include } from "uix/base/decorators.ts";
 import { Component } from "uix/components/Component.ts";
 import { template } from "uix/html/template.ts";
-import { always, Datex } from "unyt_core/datex.ts";
+import { always, Datex } from "datex-core-legacy/datex.ts";
 
 const languages = {
 	"en": "🇺🇸",
@@ -15,7 +15,7 @@ const languages = {
 			{
 				Object.entries(languages).map(([lang, flag]) => 
 					<div 
-						data-active={always(() => Datex.Runtime.ENV.LANG === lang)}
+						data-active={Datex.Runtime.ENV.LANG === lang}
 						onclick:frontend={() => use("standalone", lang) && (Datex.Runtime.ENV.LANG = lang)} class="toggle">
 						{flag}
 					</div>

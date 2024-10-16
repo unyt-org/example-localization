@@ -7,6 +7,7 @@ on:
       - main
 env:
   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  HOST_TOKEN: ${{secrets.HOST_TOKEN}}
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,4 +19,4 @@ jobs:
       - name: Setup Deno
         uses: "denoland/setup-deno@v1"
       - name: Deploy UIX App
-        run: "deno run --importmap ./importmap.json -Aqr https://cdn.unyt.org/uix@0.2.x/run.ts --stage prod --detach"
+        run: "deno run --importmap ./importmap.json -Aqr https://cdn.unyt.org/uix@0.3.x/run.ts --stage prod --detach"
