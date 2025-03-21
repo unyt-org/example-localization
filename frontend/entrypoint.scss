@@ -1,24 +1,24 @@
 .main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: auto;
-	text-align: center;
-	flex-direction: column;
-	height: 100vh;
-	cursor: pointer;
-	&>.flags {
-		display: flex;
-		grid-gap: 20px;
-		gap: 20px;
-		font-size: xx-large;
-		height: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  flex-direction: column;
+  height: 100vh;
+  cursor: pointer;
+  & > .flags {
+    display: flex;
+    grid-gap: 20px;
+    gap: 20px;
+    font-size: xx-large;
+    height: unset;
 
-		&>div {
-			opacity: 0.3;
-			&[data-active] {
-				opacity: 1;
-			}
-		}
-	}
+    & > div {
+      opacity: 0.3;
+      &[data-active] {
+        opacity: 1;
+      }
+    }
+  }
 }
